@@ -1,0 +1,7 @@
+# Package information
+VERSION=1.0.1
+DESCRIPTION=CUDA Samples
+
+# LOG
+# 1.0.0 Initial release
+# 1.0.1 Add Apache 2 license and remove additional ReportInfo in consumer sample

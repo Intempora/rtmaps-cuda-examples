@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RTMapsDiagram version="4.8.0" EngineVersion="4.12" xmlns="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.intempora.com/RTMaps/2011/RTMapsFiles http://www.intempora.com/schemas/RTMaps/2011/RTMapsDiagram.xsd">
+  <RequiredPackages>
+    <File Version="1.0.1"><![CDATA[C:/git/github/rtmaps-cuda-examples/build-2019/Release/cuda_component_sample.pck]]><Relative><![CDATA[%RTMAPS_DIAGRAMDIR%/../build-2019/Release/cuda_component_sample.pck]]></Relative></File>
+  </RequiredPackages>
+  <EngineProperties>
+    <Property LongName="Engine.startTimespeed" Type="1">1000</Property>
+    <Property LongName="Engine.startTime" Type="1">0</Property>
+    <Property LongName="Engine.session" Type="3"><![CDATA[unspecified]]></Property>
+    <Property LongName="Engine.recordingAtStart" Type="0">true</Property>
+    <Property LongName="Engine.recording" Type="0">true</Property>
+    <Property LongName="Engine.sequentialStart" Type="0">false</Property>
+    <Property LongName="Engine.shutdownTimeout" Type="1">10000000</Property>
+    <Property LongName="Engine.autoDetectStartTime" Type="0">true</Property>
+    <Property LongName="Engine.coreFunctionsToSaveInDiag" Type="4"><![CDATA[0|-1]]></Property>
+    <Property LongName="Engine.useUTCTimeReference" Type="0">false</Property>
+    <Property LongName="Engine.fastForwardThreshold" Type="1">2000</Property>
+    <Property LongName="Engine.fastRewindThreshold" Type="1">-2000</Property>
+    <Property LongName="Engine.priorityClass" Type="4"><![CDATA[3|0|Shared Time|Preemptive|Auto]]></Property>
+    <Property LongName="Engine.posixTimerThread" Type="4"><![CDATA[3|0|Auto|Timer Interval|Real Time Clock]]></Property>
+    <Property LongName="Engine.posixRealTimeClockIrqFrequency" Type="4"><![CDATA[4|0|1024|2048|4096|8192]]></Property>
+    <Property LongName="Engine.posixPreemptiveSchedulingPolicy" Type="4"><![CDATA[2|0|FIFO|Round Robin]]></Property>
+    <Property LongName="Engine.windowsUsePerformanceCounter" Type="0">true</Property>
+  </EngineProperties>
+  <ClocksManagement>
+    <Property LongName="ClocksManagement.activeClock" Type="4"><![CDATA[1|0|RTMaps_standard_clock]]></Property>
+  </ClocksManagement>
+  <Component InstanceName="MyCudaStructConsumer_1" Model="MyCudaStructConsumer" Version="1.0.1" x="560" y="136" z="0">
+    <Input LongName="MyCudaStructConsumer_1.i_dynamic_struct" Name="i_dynamic_struct">
+      <Property LongName="MyCudaStructConsumer_1.i_dynamic_struct.readerType" Type="1">0</Property>
+      <Property LongName="MyCudaStructConsumer_1.i_dynamic_struct.subsampling" Type="1">1</Property>
+    </Input>
+    <Property LongName="MyCudaStructConsumer_1.threaded" Type="0">true</Property>
+    <Property LongName="MyCudaStructConsumer_1.priority" Type="1">128</Property>
+    <Property LongName="MyCudaStructConsumer_1.autoStart" Type="0">true</Property>
+  </Component>
+  <Component InstanceName="MyCudaStructProducer_1" Model="MyCudaStructProducer" Version="1.0.0" x="208" y="136" z="0">
+    <Output LongName="MyCudaStructProducer_1.o_dynamic_struct" Name="o_dynamic_struct">
+      <Property LongName="MyCudaStructProducer_1.o_dynamic_struct.subsampling" Type="1">1</Property>
+      <Property LongName="MyCudaStructProducer_1.o_dynamic_struct.fifosize" Type="1">16</Property>
+      <Property LongName="MyCudaStructProducer_1.o_dynamic_struct.periodic" Type="0">false</Property>
+    </Output>
+    <Property LongName="MyCudaStructProducer_1.threaded" Type="0">true</Property>
+    <Property LongName="MyCudaStructProducer_1.priority" Type="1">128</Property>
+    <Property LongName="MyCudaStructProducer_1.autoStart" Type="0">true</Property>
+  </Component>
+  <Connection Output="MyCudaStructProducer_1.o_dynamic_struct" Input="MyCudaStructConsumer_1.i_dynamic_struct"/>
+  <RTBoardView ID="JavaStudio1.0">
+    <ConnectionShape InstanceName="MyCudaStructConsumer_1.i_dynamic_struct" color="0"/>
+  </RTBoardView>
+</RTMapsDiagram>

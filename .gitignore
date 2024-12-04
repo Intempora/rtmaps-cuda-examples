@@ -1,0 +1,6 @@
+.idea/
+build*/
+_build/
+cmake-build-*/
+.fuse_*
+.vs/
